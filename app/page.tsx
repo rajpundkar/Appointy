@@ -139,10 +139,12 @@ export default async function Home() {
       </section>
 
       <footer className="lp-footer">
-        <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginBottom: "1rem", fontSize: ".8125rem" }}>
-          <Link href="https://github.com" target="_blank" style={{ color: "var(--text-secondary)" }}>GitHub</Link>
+        <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginBottom: "1rem", fontSize: ".8125rem", flexWrap: "wrap" }}>
+          <Link href="https://github.com/rajpundkar/Appointy" target="_blank" style={{ color: "var(--text-secondary)" }}>GitHub</Link>
           <Link href="#pricing" style={{ color: "var(--text-secondary)" }}>Pricing</Link>
           <Link href="/login" style={{ color: "var(--text-secondary)" }}>Sign in</Link>
+          <Link href="/privacy" style={{ color: "var(--text-secondary)" }}>Privacy</Link>
+          <Link href="/terms" style={{ color: "var(--text-secondary)" }}>Terms</Link>
         </div>
         <div>© {new Date().getFullYear()} Appointy · Open-source scheduling</div>
       </footer>
