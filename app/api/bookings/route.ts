@@ -10,7 +10,7 @@ import type { Attachment, Booking, Question } from "@/lib/types";
 
 const MAX_FILES = 3;
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
-const ALLOWED_TYPES = /^(image|application|text)\
+const ALLOWED_TYPES = /^(image|application|text)\//;
 
 function bad(msg: string, code = 400) { return NextResponse.json({ error: msg }, { status: code }); }
 

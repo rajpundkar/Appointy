@@ -143,7 +143,8 @@ export async function requestPasswordReset(email: string): Promise<{ ok: true; m
   const token = await createPasswordResetToken(user.id);
   const base = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
   const link = `${base}/reset-password?token=${encodeURIComponent(token)}`;
-  const result = await sendPasswordResetEmail({ ...user, passwordHash: undefined as never }, link);
+  const { passwordHash: _ph, ...userSafe } = user;
+  const result = await sendPasswordResetEmail(userSafe, link);
   if (!result.ok) {
     console.warn(`\n  ⚠ Reset email failed (${result.error}). Manual link:\n  ${link}\n`);
     return { ok: true, manualLink: link, error: result.error };
